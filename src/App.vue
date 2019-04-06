@@ -1,29 +1,45 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div id="app" class="pb-5" v-bind:style="style">
+    <Header/>
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+<script>
+  import Header from './components/Header/Header.vue'
 
-@Component({
-  components: {
-    HelloWorld,
-  },
-})
-export default class App extends Vue {}
+  import bg_img_green from './assets/images/bg_green.jpg'
+  import bg_img_blue from './assets/images/bg_blue.jpg'
+  import bg_img_red from './assets/images/bg_red.jpg'
+  import bg_img_orange from './assets/images/bg_orange.jpg'
+  import bg_img_purple from './assets/images/bg_purple.jpg'
+  import bg_img_yellow from './assets/images/bg_yellow.jpg'
+  import bg_img_turquoise from './assets/images/bg_turquoise.jpg'
+
+  export default {
+    name: 'App',
+    components: {
+      Header
+    },
+    data() {
+      return {
+        style: {
+          backgroundImage: `url(${getRandomImageName([bg_img_green, bg_img_blue, bg_img_red, bg_img_orange, bg_img_purple, bg_img_yellow, bg_img_turquoise])})`
+        }
+      }
+    },
+    methods: {}
+  }
+
+  function getRandomImageName(imageNames) {
+    return imageNames[Math.floor(Math.random() * imageNames.length)]
+  }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+  #app {
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    position: fixed;
+  }
 </style>
