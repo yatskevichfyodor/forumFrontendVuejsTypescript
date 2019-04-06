@@ -1,6 +1,7 @@
 <template>
   <div id="app" class="pb-5" v-bind:style="style">
     <Header/>
+    <TopicsPanel/>
   </div>
 </template>
 

@@ -1,5 +1,6 @@
 import Header from './components/Header/Header.vue'
 import {Vue, Component} from "vue-property-decorator";
+import TopicsPanel from "@/components/TopicsPanel/TopicsPanel";
 
 const bg_img_green = require('./assets/images/bg_green.jpg')
 const bg_img_blue = require('./assets/images/bg_blue.jpg')
@@ -10,7 +11,7 @@ const bg_img_yellow = require('./assets/images/bg_yellow.jpg')
 const bg_img_turquoise = require('./assets/images/bg_turquoise.jpg')
 
 @Component({
-    components: { Header }
+    components: { Header, TopicsPanel }
 })
 export default class App extends Vue {
     data() {
