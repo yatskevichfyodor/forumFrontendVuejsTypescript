@@ -7,7 +7,7 @@
         </div>
         <ul class="list-group" data-bind="foreach: topics">
             <a v-for="topic in topics" :href="'/topic/' + topic" class="mb-1">
-                <li class="list-group-item list-group-item-dark" aria-disabled="true">{{topic}}</li>
+                <li class="list-group-item list-group-item-dark" aria-disabled="true">{{ topic.title }}</li>
             </a>
         </ul>
     </div>

@@ -13,10 +13,9 @@ export default class TopicsPanel extends Vue {
         console.log(tmp)
     }
     async refreshTopics() {
-        return topicService.getTopics().then((data: any) => {
-            this.topics = data;
+        return topicService.getTopics().then((response: any) => {
+            this.topics = response.data;
         })
-        console.log('Hello World!');
     }
 }
 
