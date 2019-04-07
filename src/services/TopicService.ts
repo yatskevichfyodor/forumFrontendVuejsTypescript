@@ -7,12 +7,12 @@ export class TopicService {
     constructor(){
     }
 
-    getAll(topicId: number) {
-        return axios.get(`${topicServicePath}/${topicId}`)
+    getAll() {
+        return axios.get(`${topicServicePath}/`)
     }
 
     get(topicId: number) {
-        return axios.get(`${topicServicePath}/`)
+        return axios.get(`${topicServicePath}/${topicId}`)
     }
 
     create(topic: any) {
