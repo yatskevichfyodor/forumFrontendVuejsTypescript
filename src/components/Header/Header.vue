@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar" id="header">
-    <a class="navbar-brand" href="/">Forum</a>
+    <span class="navbar-brand"><router-link to="/">Forum</router-link></span>
   </nav>
 </template>
 <script lang="ts" src="./Header.ts"></script>
