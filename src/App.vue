@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="pb-5" v-bind:style="style">
     <Header/>
-    <TopicsPanel/>
+    <router-view></router-view>
   </div>
 </template>
 
