@@ -1,9 +1,9 @@
 <template>
     <div class="container mb-4 mt-4" id="topics-panel">
         <div class="mt-1 mb-3">
-            <a href="/topic/add">
-                <button type="button" class="btn btn-secondary">Add topic</button>
-            </a>
+            <button type="button" class="btn btn-dark">
+                <router-link to="/topic-edit">Add topic</router-link>
+            </button>
         </div>
         <ul class="list-group" data-bind="foreach: topics">
             <a v-for="topic in topics" :href="'/topic/' + topic" class="mb-1">
