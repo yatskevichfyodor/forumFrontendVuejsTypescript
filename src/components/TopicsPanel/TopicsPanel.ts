@@ -1,13 +1,13 @@
 import {Component, Vue} from "vue-property-decorator";
 import {TopicService} from "@/services/TopicService";
 
-const topicService = new TopicService()
+const topicService = new TopicService();
 
 @Component
 export default class TopicsPanel extends Vue {
-    topics: Array<any> = []
+    topics: Array<any> = [];
     async created() {
-        let tmp = this.refreshTopics()
+        let tmp = this.refreshTopics();
         console.log(tmp)
     }
     async refreshTopics() {
@@ -16,4 +16,3 @@ export default class TopicsPanel extends Vue {
         })
     }
 }
-

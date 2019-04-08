@@ -5,10 +5,12 @@
                 <router-link to="/topic-edit">Add topic</router-link>
             </button>
         </div>
-        <ul class="list-group" data-bind="foreach: topics">
-            <a v-for="topic in topics" :href="'/topic/' + topic" class="mb-1">
-                <li class="list-group-item list-group-item-dark" aria-disabled="true">{{ topic.title }}</li>
-            </a>
+        <ul class="list-group">
+            <div class="mb-1">
+                <router-link v-for="topic in topics" v-bind:to="{name: 'topic', params: { topicId: topic.id}}">
+                    <li class="list-group-item list-group-item-dark" aria-disabled="true">{{ topic.title }}</li>
+                </router-link>
+            </div>
         </ul>
     </div>
 </template>
