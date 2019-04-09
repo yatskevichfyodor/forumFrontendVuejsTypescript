@@ -1,29 +1,30 @@
 import axios from 'axios';
 
-const serverPath: string = 'http://localhost:8080';
-const topicServicePath: string = serverPath + '/topic';
+const config = require('@/config');
+const API_URI = config.API_URI;
+const SERVICE_URI: string = API_URI + '/topic';
 
 export class TopicService {
     constructor(){
     }
 
     getAll() {
-        return axios.get(`${topicServicePath}/`)
+        return axios.get(`${SERVICE_URI}/`)
     }
 
     get(topicId: number) {
-        return axios.get(`${topicServicePath}/${topicId}`)
+        return axios.get(`${SERVICE_URI}/${topicId}`)
     }
 
     create(topic: any) {
-        return axios.post(topicServicePath, topic)
+        return axios.post(SERVICE_URI, topic)
     }
 
     update(topic: any) {
-        return axios.put(topicServicePath, topic)
+        return axios.put(SERVICE_URI, topic)
     }
 
     delete(topicId: number) {
-        return axios.delete(`${topicServicePath}/${topicId}`)
+        return axios.delete(`${SERVICE_URI}/${topicId}`)
     }
 }
