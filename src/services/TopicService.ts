@@ -12,19 +12,19 @@ export class TopicService {
         return axios.get(`${SERVICE_URI}/`)
     }
 
-    get(topicId: number) {
-        return axios.get(`${SERVICE_URI}/${topicId}`)
+    get(id: number) {
+        return axios.get(`${SERVICE_URI}/${id}`)
     }
 
-    create(topic: any) {
-        return axios.post(SERVICE_URI, topic)
+    create(dto: any) {
+        return axios.post(SERVICE_URI, dto)
     }
 
-    update(topic: any) {
-        return axios.put(SERVICE_URI, topic)
+    update(dto: any) {
+        return axios.put(SERVICE_URI, dto)
     }
 
-    delete(topicId: number) {
-        return axios.delete(`${SERVICE_URI}/${topicId}`)
+    delete(id: number) {
+        return axios.delete(`${SERVICE_URI}/${id}`)
     }
 }
