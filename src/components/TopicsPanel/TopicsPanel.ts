@@ -7,11 +7,10 @@ const topicService = new TopicService();
 export default class TopicsPanel extends Vue {
     topics: Array<any> = [];
     async created() {
-        let tmp = this.refreshTopics();
-        console.log(tmp)
+        this.refreshTopics();
     }
     async refreshTopics() {
-        return topicService.getAll().then((response: any) => {
+        topicService.getAll().then((response: any) => {
             this.topics = response.data;
         })
     }
