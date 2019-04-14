@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import TopicsPanel from "@/components/TopicsPanel/TopicsPanel";
 import TopicEdit from "@/components/TopicEdit/TopicEdit";
+import Topic from "@/components/Topic/Topic";
 
 Vue.use(VueRouter);
 Vue.use(BootstrapVue);
@@ -14,7 +15,8 @@ Vue.config.productionTip = false;
 
 const routes = [
   { path: '/', component: TopicsPanel },
-  { path: '/topic-edit', component: TopicEdit }
+  { path: '/topic-edit', component: TopicEdit },
+  { path: '/topic/:topicId', component: Topic, name: 'topic' }
 ];
 
 const router = new VueRouter({
