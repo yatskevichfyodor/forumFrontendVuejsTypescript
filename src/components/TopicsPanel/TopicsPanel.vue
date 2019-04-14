@@ -6,11 +6,9 @@
             </button>
         </div>
         <ul class="list-group">
-            <div class="mb-1">
-                <router-link v-for="topic in topics" v-bind:to="{name: 'topic', params: { topicId: topic.id}}">
-                    <li class="list-group-item list-group-item-dark" aria-disabled="true">{{ topic.title }}</li>
-                </router-link>
-            </div>
+            <router-link v-for="topic in topics" v-bind:to="{name: 'topic', params: { topicId: topic.id}}">
+                <li class="list-group-item list-group-item-dark mb-1" aria-disabled="true">{{ topic.title }}</li>
+            </router-link>
         </ul>
     </div>
 </template>
