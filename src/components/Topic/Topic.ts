@@ -7,26 +7,38 @@ const commentService = new CommentService();
 
 @Component
 export default class Topic extends Vue {
+    id!: number;
     title: string = '';
     dateCreated: string = '';
     comments: Array<any> = [];
-    props: Array<any> = ['topicId'];
+    inputCommentContent: string = '';
     async created() {
         this.getTopicData();
-        this.getTopicComments();
+        this.refreshComments();
+        this.id = Number(this.$route.params.topicId);
     }
     getTopicData() {
         topicService.get(Number(this.$route.params.topicId)).then((response: any) => {
+            console.log(response);
+
             let topic = response.data;
-            console.log(topic);
             this.title = topic.title;
+            this.dateCreated = topic.dateCreated;
         })
     }
-    getTopicComments() {
+    refreshComments() {
         commentService.getByTopicId(Number(this.$route.params.topicId)).then((response: any) => {
-            let comments = response.data;
-            console.log(comments);
-            this.comments = comments;
+            console.log(response);
+
+            this.comments = response.data;
+        })
+    }
+    addComment() {
+        commentService.create({content: this.inputCommentContent, topic: {id: this.id}}).then((response: any) => {
+            console.log(response);
+            this.refreshComments();
+            this.inputCommentContent = '';
+
         })
     }
 }
