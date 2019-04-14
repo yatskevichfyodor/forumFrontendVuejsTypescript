@@ -16,12 +16,11 @@ export default class App extends Vue {
     data() {
         return {
             style: {
-                backgroundImage: `url(${getRandomImageName([bg_img_green, bg_img_blue, bg_img_red, bg_img_orange, bg_img_purple, bg_img_yellow, bg_img_turquoise])})`
+                backgroundImage: `url(${this.getRandomImageName([bg_img_green, bg_img_blue, bg_img_red, bg_img_orange, bg_img_purple, bg_img_yellow, bg_img_turquoise])})`
             }
         }
     }
-}
-
-function getRandomImageName(imageNames: Array<string>) {
-    return imageNames[Math.floor(Math.random() * imageNames.length)]
+    getRandomImageName(imageNames: Array<string>) {
+        return imageNames[Math.floor(Math.random() * imageNames.length)]
+    }
 }
